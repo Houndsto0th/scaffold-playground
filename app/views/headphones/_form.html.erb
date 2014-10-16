@@ -1,0 +1,29 @@
+<%= form_for(@headphone) do |f| %>
+  <% if @headphone.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@headphone.errors.count, "error") %> prohibited this headphone from being saved:</h2>
+
+      <ul>
+      <% @headphone.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :brand %><br>
+    <%= f.text_field :brand %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br>
+    <%= f.number_field :rating %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

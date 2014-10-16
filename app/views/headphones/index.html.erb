@@ -1,0 +1,29 @@
+<h1>Listing headphones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @headphones.each do |headphone| %>
+      <tr>
+        <td><%= headphone.brand %></td>
+        <td><%= headphone.model %></td>
+        <td><%= headphone.rating %></td>
+        <td><%= link_to 'Show', headphone %></td>
+        <td><%= link_to 'Edit', edit_headphone_path(headphone) %></td>
+        <td><%= link_to 'Destroy', headphone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Headphone', new_headphone_path %>
